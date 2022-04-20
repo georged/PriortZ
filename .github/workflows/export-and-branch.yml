@@ -28,7 +28,8 @@ jobs:
     steps:
     - uses: actions/checkout@v2
       with:
-        lfs: true
+        lfs: 'true'
+
 - name: export-solution action
       uses: microsoft/powerplatform-actions/export-solution@0.4.0
       with:
