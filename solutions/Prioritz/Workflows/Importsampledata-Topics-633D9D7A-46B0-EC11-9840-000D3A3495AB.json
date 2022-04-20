@@ -1,0 +1,398 @@
+{
+  "properties": {
+    "connectionReferences": {
+      "shared_commondataserviceforapps": {
+        "runtimeSource": "embedded",
+        "connection": {
+          "connectionReferenceLogicalName": "contoso_sharedcommondataserviceforapps_5e308"
+        },
+        "api": {
+          "name": "shared_commondataserviceforapps"
+        }
+      }
+    },
+    "definition": {
+      "$schema": "https://schema.management.azure.com/providers/Microsoft.Logic/schemas/2016-06-01/workflowdefinition.json#",
+      "contentVersion": "1.0.0.0",
+      "parameters": {
+        "$connections": {
+          "defaultValue": {},
+          "type": "Object"
+        },
+        "$authentication": {
+          "defaultValue": {},
+          "type": "SecureObject"
+        }
+      },
+      "triggers": {
+        "manual": {
+          "metadata": {
+            "operationMetadataId": "fa1cd8c5-066d-430e-a97a-6d28b4d4cacc"
+          },
+          "type": "Request",
+          "kind": "Button",
+          "inputs": {
+            "schema": {
+              "type": "object",
+              "properties": {},
+              "required": []
+            }
+          }
+        }
+      },
+      "actions": {
+        "Parse_JSON": {
+          "runAfter": {},
+          "metadata": {
+            "operationMetadataId": "52b1f238-155c-45c9-8a49-2f81527bfc83"
+          },
+          "type": "ParseJson",
+          "inputs": {
+            "content": {
+              "Topics": [
+                {
+                  "Topic": "Giveaway for this year's picnic",
+                  "Details": "Choose the giveaway for this year's picnic",
+                  "ThumbnailURL": "https://images-us-prod.cms.commerce.dynamics.com/cms/api/qbvttlwqcm/imageFileData/MCnpO?ver=59b1&w=935&h=471&q=80&m=6&f=jpg",
+                  "TopicItems": [
+                    {
+                      "Choice": "CP Cappuccino Cup w/ Saucer",
+                      "ItemThumbnailURL": "https://images-us-prod.cms.commerce.dynamics.com/cms/api/qbvttlwqcm/imageFileData/search?fileName=/Products%2FSP-AC1010_000_001.png&w=0&h=772&q=80&m=6&f=jpg&cropfocalregion=true"
+                    },
+                    {
+                      "Choice": "Diner Mug",
+                      "ItemThumbnailURL": "https://images-us-prod.cms.commerce.dynamics.com/cms/api/qbvttlwqcm/imageFileData/search?fileName=/Products%2FSP-AC1022_000_001.png&w=0&h=772&q=80&m=6&f=jpg&cropfocalregion=true"
+                    },
+                    {
+                      "Choice": "Hope is brewing Long Sleeve - heart",
+                      "ItemThumbnailURL": "https://images-us-prod.cms.commerce.dynamics.com/cms/api/qbvttlwqcm/imageFileData/search?fileName=/Products%2FSP-AC1018_000_001.png&w=0&h=772&q=80&m=6&f=jpg&cropfocalregion=true"
+                    },
+                    {
+                      "Choice": "Contoso Logo Beanie",
+                      "ItemThumbnailURL": "https://images-us-prod.cms.commerce.dynamics.com/cms/api/qbvttlwqcm/imageFileData/search?fileName=/Products%2FSP-AC1021_000_001.png&w=0&h=772&q=80&m=6&f=jpg&cropfocalregion=true"
+                    }
+                  ]
+                },
+                {
+                  "Topic": "Coffee machine for breakroom",
+                  "Details": "Which coffee machine should we get for the breakroom?",
+                  "ThumbnailURL": "https://images-us-prod.cms.commerce.dynamics.com/cms/api/qbvttlwqcm/imageFileData/MAR3N?ver=ed5e&w=935&h=471&q=80&m=6&f=jpg",
+                  "TopicItems": [
+                    {
+                      "Choice": "AutoDripLite",
+                      "ItemThumbnailURL": "https://images-us-prod.cms.commerce.dynamics.com/cms/api/qbvttlwqcm/imageFileData/search?fileName=/Products%2FSP-SCM1006_000_001.png&w=0&h=772&q=80&m=6&f=jpg&cropfocalregion=true"
+                    },
+                    {
+                      "Choice": "AutoDrip",
+                      "ItemThumbnailURL": "https://images-us-prod.cms.commerce.dynamics.com/cms/api/qbvttlwqcm/imageFileData/search?fileName=/Products%2FSP-SCM1004_000_001.png&w=0&h=772&q=80&m=6&f=jpg&cropfocalregion=true"
+                    },
+                    {
+                      "Choice": "Smart Brew 300",
+                      "ItemThumbnailURL": "https://images-us-prod.cms.commerce.dynamics.com/cms/api/qbvttlwqcm/imageFileData/search?fileName=/Products%2FSP-SCM1000_000_001.png&w=0&h=772&q=80&m=6&f=jpg&cropfocalregion=true"
+                    },
+                    {
+                      "Choice": "Precision Brew 100",
+                      "ItemThumbnailURL": "https://images-us-prod.cms.commerce.dynamics.com/cms/api/qbvttlwqcm/imageFileData/search?fileName=/Products%2FSP-SCM1002_000_001.png&w=0&h=772&q=80&m=6&f=jpg&cropfocalregion=true"
+                    }
+                  ]
+                },
+                {
+                  "Topic": "Morning brewed",
+                  "Details": "Which coffee should be the default brewed each morning?",
+                  "ThumbnailURL": "https://images-us-prod.cms.commerce.dynamics.com/cms/api/qbvttlwqcm/imageFileData/MAR6j?ver=bea9&w=935&h=471&q=80&m=6&f=jpg",
+                  "TopicItems": [
+                    {
+                      "Choice": "Kenya - Light Roast",
+                      "ItemThumbnailURL": "https://images-us-prod.cms.commerce.dynamics.com/cms/api/qbvttlwqcm/imageFileData/search?fileName=/Products%2FSP-CB1001_000_001.png&w=0&h=772&q=80&m=6&f=jpg&cropfocalregion=true"
+                    },
+                    {
+                      "Choice": "Indonesia - Medium Roast",
+                      "ItemThumbnailURL": "https://images-us-prod.cms.commerce.dynamics.com/cms/api/qbvttlwqcm/imageFileData/search?fileName=/Products%2FSP-CB1005_000_001.png&w=0&h=772&q=80&m=6&f=jpg&cropfocalregion=true"
+                    },
+                    {
+                      "Choice": "Brazil - Medium Roast",
+                      "ItemThumbnailURL": "https://images-us-prod.cms.commerce.dynamics.com/cms/api/qbvttlwqcm/imageFileData/search?fileName=/Products%2FSP-CB1007_000_001.png&w=0&h=772&q=80&m=6&f=jpg&cropfocalregion=true"
+                    },
+                    {
+                      "Choice": "Colombia - Dark Roast",
+                      "ItemThumbnailURL": "https://images-us-prod.cms.commerce.dynamics.com/cms/api/qbvttlwqcm/imageFileData/search?fileName=/Products%2FSP-CB1015_000_001.png&w=0&h=772&q=80&m=6&f=jpg&cropfocalregion=true"
+                    }
+                  ]
+                },
+                {
+                  "Topic": "Shirt to give to our new loyalty members",
+                  "Details": "Choose the shirt to give to our new loyalty members",
+                  "ThumbnailURL": "https://images-us-prod.cms.commerce.dynamics.com/cms/api/qbvttlwqcm/imageFileData/MCxOU?ver=8d39&w=935&h=471&q=80&m=6&f=jpg",
+                  "TopicItems": [
+                    {
+                      "Choice": "Hope is brewing Long Sleeve - logo",
+                      "ItemThumbnailURL": "https://images-us-prod.cms.commerce.dynamics.com/cms/api/qbvttlwqcm/imageFileData/search?fileName=/Products%2FSP-AC1019_000_001.png&w=0&h=772&q=80&m=6&f=jpg&cropfocalregion=true"
+                    },
+                    {
+                      "Choice": "Hope is brewing Long Sleeve - heart",
+                      "ItemThumbnailURL": "https://images-us-prod.cms.commerce.dynamics.com/cms/api/qbvttlwqcm/imageFileData/search?fileName=/Products%2FSP-AC1018_000_001.png&w=0&h=772&q=80&m=6&f=jpg&cropfocalregion=true"
+                    },
+                    {
+                      "Choice": "Hope is brewing T-Shirt - logo",
+                      "ItemThumbnailURL": "https://images-us-prod.cms.commerce.dynamics.com/cms/api/qbvttlwqcm/imageFileData/search?fileName=/Products%2FSP-AC1017_000_001.png&w=0&h=772&q=80&m=6&f=jpg&cropfocalregion=true"
+                    },
+                    {
+                      "Choice": "Hope is brewing T-Shirt - heart",
+                      "ItemThumbnailURL": "https://images-us-prod.cms.commerce.dynamics.com/cms/api/qbvttlwqcm/imageFileData/search?fileName=/Products%2FSP-AC1016_000_001.png&w=0&h=772&q=80&m=6&f=jpg&cropfocalregion=true"
+                    }
+                  ]
+                }
+              ]
+            },
+            "schema": {
+              "type": "object",
+              "properties": {
+                "Topics": {
+                  "type": "array",
+                  "items": {
+                    "type": "object",
+                    "properties": {
+                      "Topic": {
+                        "type": "string"
+                      },
+                      "Details": {
+                        "type": "string"
+                      },
+                      "ThumbnailURL": {
+                        "type": "string"
+                      },
+                      "TopicItems": {
+                        "type": "array",
+                        "items": {
+                          "type": "object",
+                          "properties": {
+                            "Choice": {
+                              "type": "string"
+                            },
+                            "ItemThumbnailURL": {
+                              "type": "string"
+                            }
+                          },
+                          "required": [
+                            "Choice",
+                            "ItemThumbnailURL"
+                          ]
+                        }
+                      }
+                    },
+                    "required": [
+                      "Topic",
+                      "Details",
+                      "ThumbnailURL",
+                      "TopicItems"
+                    ]
+                  }
+                }
+              }
+            }
+          }
+        },
+        "Apply_to_each_topic": {
+          "foreach": "@body('Parse_JSON')?['Topics']",
+          "actions": {
+            "Add_a_new_topic": {
+              "runAfter": {},
+              "metadata": {
+                "operationMetadataId": "75520d87-a888-4339-989d-c31fa2d3abd2"
+              },
+              "type": "OpenApiConnection",
+              "inputs": {
+                "host": {
+                  "connectionName": "shared_commondataserviceforapps",
+                  "operationId": "CreateRecord",
+                  "apiId": "/providers/Microsoft.PowerApps/apis/shared_commondataserviceforapps"
+                },
+                "parameters": {
+                  "entityName": "contoso_prioritztopics",
+                  "item/contoso_respondby": "@addDays(utcNow(), 5, 'MM-dd-yyyy')",
+                  "item/contoso_details": "@items('Apply_to_each_topic')?['Details']",
+                  "item/contoso_topic": "@items('Apply_to_each_topic')?['Topic']"
+                },
+                "authentication": {
+                  "type": "Raw",
+                  "value": "@json(decodeBase64(triggerOutputs().headers['X-MS-APIM-Tokens']))['$ConnectionKey']"
+                }
+              }
+            },
+            "Apply_to_each_topic_item": {
+              "foreach": "@items('Apply_to_each_topic')?['TopicItems']",
+              "actions": {
+                "Add_a_new_topic_item": {
+                  "runAfter": {},
+                  "metadata": {
+                    "operationMetadataId": "8977b0aa-8f2a-413c-8950-ffcd1e236f9e"
+                  },
+                  "type": "OpenApiConnection",
+                  "inputs": {
+                    "host": {
+                      "connectionName": "shared_commondataserviceforapps",
+                      "operationId": "CreateRecord",
+                      "apiId": "/providers/Microsoft.PowerApps/apis/shared_commondataserviceforapps"
+                    },
+                    "parameters": {
+                      "entityName": "contoso_prioritztopicitems",
+                      "item/contoso_choice": "@items('Apply_to_each_topic_item')?['Choice']",
+                      "item/contoso_PrioritzTopic@odata.bind": "contoso_prioritztopics(@{outputs('Add_a_new_topic')?['body/contoso_prioritztopicid']})"
+                    },
+                    "authentication": {
+                      "type": "Raw",
+                      "value": "@json(decodeBase64(triggerOutputs().headers['X-MS-APIM-Tokens']))['$ConnectionKey']"
+                    }
+                  }
+                },
+                "Check_if_item_thumbnail_is_provided": {
+                  "actions": {},
+                  "runAfter": {
+                    "Add_a_new_topic_item": [
+                      "Succeeded"
+                    ]
+                  },
+                  "else": {
+                    "actions": {
+                      "Get_topic_item_photo": {
+                        "runAfter": {},
+                        "metadata": {
+                          "operationMetadataId": "51c292ae-5c31-40c1-9f7d-7e9bb86795bb"
+                        },
+                        "type": "Http",
+                        "inputs": {
+                          "method": "GET",
+                          "uri": "@items('Apply_to_each_topic_item')?['ItemThumbnailURL']"
+                        }
+                      },
+                      "Upload_topic_item_photo": {
+                        "runAfter": {
+                          "Get_topic_item_photo": [
+                            "Succeeded"
+                          ]
+                        },
+                        "metadata": {
+                          "operationMetadataId": "80cb2d51-2da9-4345-909e-48a5ac958784"
+                        },
+                        "type": "OpenApiConnection",
+                        "inputs": {
+                          "host": {
+                            "connectionName": "shared_commondataserviceforapps",
+                            "operationId": "UpdateEntityFileImageFieldContent",
+                            "apiId": "/providers/Microsoft.PowerApps/apis/shared_commondataserviceforapps"
+                          },
+                          "parameters": {
+                            "entityName": "contoso_prioritztopicitems",
+                            "recordId": "@outputs('Add_a_new_topic_item')?['body/contoso_prioritztopicitemid']",
+                            "fileImageFieldName": "contoso_photo",
+                            "item": "@body('Get_topic_item_photo')",
+                            "x-ms-file-name": "Untitled"
+                          },
+                          "authentication": {
+                            "type": "Raw",
+                            "value": "@json(decodeBase64(triggerOutputs().headers['X-MS-APIM-Tokens']))['$ConnectionKey']"
+                          }
+                        }
+                      }
+                    }
+                  },
+                  "expression": {
+                    "equals": [
+                      "@empty(item()['ItemThumbnailURL'])",
+                      "@true"
+                    ]
+                  },
+                  "metadata": {
+                    "operationMetadataId": "b174ee39-f6dc-4afb-ad26-fab9293a72e8"
+                  },
+                  "type": "If"
+                }
+              },
+              "runAfter": {
+                "Check_if_thumbnail_is_provided": [
+                  "Succeeded"
+                ]
+              },
+              "metadata": {
+                "operationMetadataId": "18126210-22a5-4290-8366-64bb0b3a88d1"
+              },
+              "type": "Foreach"
+            },
+            "Check_if_thumbnail_is_provided": {
+              "actions": {},
+              "runAfter": {
+                "Add_a_new_topic": [
+                  "Succeeded"
+                ]
+              },
+              "else": {
+                "actions": {
+                  "Get_topic_photo": {
+                    "runAfter": {},
+                    "metadata": {
+                      "operationMetadataId": "b732aef2-d32c-4e3b-9d42-aec098f05a31"
+                    },
+                    "type": "Http",
+                    "inputs": {
+                      "method": "GET",
+                      "uri": "@items('Apply_to_each_topic')?['ThumbnailURL']"
+                    }
+                  },
+                  "Upload_topic_photo": {
+                    "runAfter": {
+                      "Get_topic_photo": [
+                        "Succeeded"
+                      ]
+                    },
+                    "metadata": {
+                      "operationMetadataId": "f60ba352-6a68-4771-9ab8-836f44e3d6c0"
+                    },
+                    "type": "OpenApiConnection",
+                    "inputs": {
+                      "host": {
+                        "connectionName": "shared_commondataserviceforapps",
+                        "operationId": "UpdateEntityFileImageFieldContent",
+                        "apiId": "/providers/Microsoft.PowerApps/apis/shared_commondataserviceforapps"
+                      },
+                      "parameters": {
+                        "entityName": "contoso_prioritztopics",
+                        "recordId": "@outputs('Add_a_new_topic')?['body/contoso_prioritztopicid']",
+                        "fileImageFieldName": "contoso_photo",
+                        "item": "@body('Get_topic_photo')",
+                        "x-ms-file-name": "Untitled"
+                      },
+                      "authentication": {
+                        "type": "Raw",
+                        "value": "@json(decodeBase64(triggerOutputs().headers['X-MS-APIM-Tokens']))['$ConnectionKey']"
+                      }
+                    }
+                  }
+                }
+              },
+              "expression": {
+                "equals": [
+                  "@empty(item()['ThumbnailURL'])",
+                  "@true"
+                ]
+              },
+              "metadata": {
+                "operationMetadataId": "6cd954c6-03fe-4721-9b3e-2ef5f146b2b5"
+              },
+              "type": "If"
+            }
+          },
+          "runAfter": {
+            "Parse_JSON": [
+              "Succeeded"
+            ]
+          },
+          "metadata": {
+            "operationMetadataId": "f3cb29be-5587-425a-a38e-88759d095274"
+          },
+          "type": "Foreach"
+        }
+      }
+    }
+  },
+  "schemaVersion": "1.0.0.0"
+}
